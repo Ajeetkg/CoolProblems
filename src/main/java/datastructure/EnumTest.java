@@ -12,6 +12,7 @@ public class EnumTest {
         System.out.println("Hello Enum: " + OntologyType.RXNORM.value.toString());
         //System.out.println("Hello Enum: " + OntologyType.valueOf(OntologyType.class, "RxNorm"));
         System.out.println("Hello Enum: " + EnumUtil.from(OntologyType.class,"RxNorm"));
+        System.out.println("Enum location: " + OntologyType.RXNORM.value);
     }
 
 
@@ -39,6 +40,8 @@ public class EnumTest {
         public String getValue() {
             return value;
         }
+
+
     }
 
 }

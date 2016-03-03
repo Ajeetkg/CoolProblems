@@ -12,12 +12,18 @@ public class SortingJdk8Validator {
     public static void main(String[] args) {
 
         SortingJdk8Validator sortingJdk8Validator = new SortingJdk8Validator();
-        sortingJdk8Validator.sortTest1();
+        sortingJdk8Validator.sortTest1(null);
 
     }
 
 
-    public void sortTest1() {
+    @MyAnnotation
+    public void sortTest1( String val) {
+
+
+
+
+
         List<Person> persons =
                 Arrays.asList(
                         new Person("Max", "Nam", 18),
