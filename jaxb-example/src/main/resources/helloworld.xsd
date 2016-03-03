@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+
+            xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+
+            jxb:version="2.0">
+
+    <xsd:element name="hello" type="helloType"/>
+
+    <xsd:complexType name="helloType">
+
+        <xsd:sequence>
+
+            <xsd:element name="greeting" type="xsd:string"/>
+
+            <xsd:element name="name" type="nameType"/>
+
+        </xsd:sequence>
+
+    </xsd:complexType>
+
+    <xsd:complexType name="nameType">
+
+        <xsd:simpleContent>
+
+            <xsd:extension base="xsd:string">
+
+                <xsd:attribute name="title" type="titleType">
+
+                </xsd:attribute>
+
+            </xsd:extension>
+
+        </xsd:simpleContent>
+
+    </xsd:complexType>
+
+    <xsd:simpleType name="titleType">
+
+        <xsd:restriction base="xsd:string">
+
+            <xsd:enumeration value="Mr"/>
+
+            <xsd:enumeration value="Mrs"/>
+
+        </xsd:restriction>
+
+    </xsd:simpleType>
+
+</xsd:schema>
