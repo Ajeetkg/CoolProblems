@@ -13,6 +13,7 @@ public class EnumTest {
         //System.out.println("Hello Enum: " + OntologyType.valueOf(OntologyType.class, "RxNorm"));
         System.out.println("Hello Enum: " + EnumUtil.from(OntologyType.class,"RxNorm"));
         System.out.println("Enum location: " + OntologyType.RXNORM.value);
+        System.out.println("String: "+OntologyType.RXNORM);
     }
 
 
