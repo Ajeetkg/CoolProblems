@@ -12,6 +12,7 @@ public class ReverseString {
     }
 
     private static  String  reverseString(String str){
+        System.out.println(str);
         if(str==null || str.length() <=1) return str;
         return reverseString(str.substring(1))+str.charAt(0);
     }
