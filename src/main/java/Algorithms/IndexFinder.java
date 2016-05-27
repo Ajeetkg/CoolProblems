@@ -3,14 +3,15 @@ package Algorithms;
 import java.util.Arrays;
 
 /**
+ * Given an array, find the index of the values which equal to the given sum
  * Created by Ajeet on 3/21/2015.
  */
 public class IndexFinder {
 
     public static void main(String[] args) {
-        int[] array = {3, 8,12, 15, 23, 45};
-        findIndexO2(array, 20);
-        findIndexN(array, 20);
+        int[] array = {3, 7, 8,12, 15, 23};
+        findIndexO2(array, 38);
+        findIndexN(array, 15);
     }
 
     //basic method

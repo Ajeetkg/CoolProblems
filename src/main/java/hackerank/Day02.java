@@ -3,59 +3,59 @@ package hackerank;
 import java.util.Scanner;
 
 /**
- * Objective
- Today, we're discussing data types. Check out the Tutorial tab for learning materials and an instructional video!
+ Objective
+ In this challenge, you'll work with arithmetic operators. Check out the Tutorial tab for learning materials and an instructional video!
 
  Task
- Complete the code in the editor below. The variables , , and  are already declared and initialized for you. You must declare  variables: one of type int, one of type double, and one of type String. Then you must read  lines of input from stdin and initialize your  variables. Finally, you must use the  operator to perform the following operations:
+ Given the meal price (base cost of a meal), tip percent (the percentage of the meal price being added as tip), and tax percent (the percentage of the meal price being added as tax) for a meal, find and print the meal's total cost.
 
- Print the sum of  plus your int variable on a new line.
- Print the sum of  plus your double variable to a scale of one decimal place on a new line.
- Concatenate  with the string you read as input and print the result on a new line.
- Note: If you are using a language that doesn't support using  for string concatenation (e.g.: ), you can just print one variable immediately following the other on the same line. The string provided in your editor must be printed first, immediately followed by the string you read as input.
+ Note: Be sure to use precise values for your calculations, or you may end up with an incorrectly rounded result!
 
  Input Format
 
- The first line contains an integer, .
- The second line contains a double, .
- The third line contains a string, .
+ There are  lines of numeric input:
+ The first line has a double,  (the cost of the meal before tax and tip).
+ The second line has an integer,  (the percentage of  being added as tip).
+ The third line has an integer,  (the percentage of  being added as tax).
 
  Output Format
 
- Print the sum
- Sample Inputof both integers on the first line, the sum of both doubles on the second line, and then the two concatenated strings on the third line.
+ Print , where  is the rounded integer result of the entire bill ( with added tax and tip).
 
+ Sample Input
 
- 12
- 4.0
- is the best place to learn and practice coding!
+ 12.00
+ 20
+ 8
  Sample Output
 
- 16
- 8.0
- HackerRank is the best place to learn and practice coding!
+ The total meal cost is 15 dollars.
+ Explanation
+
+ Given:
+ , ,
+
+ Calculations:
+
+
+
+
+ We round  to the nearest dollar (integer) and then print our result:
+
+ The total meal cost is 15 dollars.
  */
 public class Day02 {
-
-    public static void main(String[] args) {
-        int i = 4;
-        double d = 4.0;
-        String s = "HackerRank ";
-
+    public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
-        scan.useDelimiter("\\n");
-    /* Declare second integer, double, and String variables. */
-        Integer iNum = scan.nextInt();
-        Double dNum = scan.nextDouble();
-        String str = scan.next();
-        /* Read and save an integer, double, and String to your variables.*/
-        /* Print the sum of both integer variables on a new line. */
-        System.out.println(i + iNum);
-        /* Print the sum of the double variables on a new line. */
-        System.out.println(d + dNum);
-        /* Concatenate and print the String variables on a new line;
-            the 's' variable above should be printed first. */
-        str = s+str;
-        System.out.println(str);
-}
+        double mealCost = scan.nextDouble();
+        int tipPercent = scan.nextInt();
+        int taxPercent = scan.nextInt();
+        scan.close();
+
+        double tip = tipPercent*.01*mealCost;
+        double tax = taxPercent*.01*mealCost;
+        int totalCost = (int) Math.round(mealCost+tip+tax);
+        System.out.println("The total meal cost is "+ totalCost + " dollars");
+
+    }
 }

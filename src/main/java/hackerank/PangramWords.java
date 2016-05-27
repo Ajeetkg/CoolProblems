@@ -34,4 +34,40 @@ public class PangramWords {
         }
         return "not pangram";
     }
+
+
+    private final Set<Character> lettersRemaining = new HashSet<>();
+
+    public PangramWords(String s) {
+        for (char ch = 'a'; ch <= 'z'; ch++) {
+            lettersRemaining.add(ch);
+        }
+        s = s.toLowerCase();
+        for (int i = 0; i < s.length(); i++) {
+            lettersRemaining.remove(s.charAt(i));
+        }
+    }
+
+    public boolean isPangram() {
+        return lettersRemaining.isEmpty();
+    }
+
+    public Set<Character> getMissingAlphabets() {
+        return new HashSet<>(lettersRemaining);
+    }
+
+    public static boolean isPanagramString(String s) {
+        s = s.toLowerCase();
+        int count = 0;
+        for (char c = 'a'; c <= 'z'; c++) {
+            if (!s.contains(String.valueOf(c))) {
+                return false;
+            }
+            count++;
+        }
+        return count == 26;
+    }
+
 }
+
+
